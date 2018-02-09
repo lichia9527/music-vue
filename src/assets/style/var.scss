@@ -1,0 +1,28 @@
+$color-theme: #d33a32;
+$color-theme-s: #c53b31;
+$color-background: #fff;
+$color-text: #222;
+$color-text-sub: #ddd;
+$color-text-theme: #fff;
+$color-border:#eaeaea;
+//字体定义规范
+$font-size-small-s: 10px;
+$font-size-small: 12px;
+$font-size-medium: 14px;
+$font-size-medium-x: 16px;
+$font-size-large: 18px;
+$font-size-large-x: 22px;
+$designWidth: 750;
+@function rem($px) {
+	@return $px*320/$designWidth/20+rem;
+}
+
+@mixin font($px) {
+	font-size: $px+px;
+	[data-dpr="2"] & {
+		font-size: 2*$px +px;
+	}
+	[data-dpr="3"] & {
+		font-size: 3*$px +px;
+	}
+}
