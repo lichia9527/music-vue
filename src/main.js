@@ -7,12 +7,17 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import {
   numberConvert
 } from '@/assets/js/filter'
+import VueLazyload from 'vue-lazyload'
+import layLoadIamge from '@/assets/image/default.png'
 
 // require styles
 import 'swiper/dist/css/swiper.css'
 
-Vue.use(VueAwesomeSwiper /* { default global options } */)
-
+Vue.use(VueAwesomeSwiper)
+Vue.use(VueLazyload, {
+  error: layLoadIamge,
+  loading: layLoadIamge
+})
 Vue.config.productionTip = false
 
 Vue.filter('numberConvert', numberConvert)

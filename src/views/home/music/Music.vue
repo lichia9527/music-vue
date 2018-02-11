@@ -41,24 +41,32 @@
         </router-link>
       </li>
     </ul>
-    <list-three m-title="推荐歌单" :items="recommendSongs" link="/songs"></list-three>
+    <recommend-song-list :items="recommendSongs"></recommend-song-list>
+    <du-jia-fang-song :data="personalRecommends"></du-jia-fang-song>
+    <latest-music :data="latestMusic"></latest-music>
   </div>
 </template>
 <script>
 import Slider from '@/components/Slider'
 import Scroll from '@/components/Scroll'
-import ListThree from '@/components/ListThree'
+import RecommendSongList from './RecommendSongList'
+import DuJiaFangSong from './DuJiaFangSong'
+import LatestMusic from './LatestMusic'
 import { MusicService } from '@/api/music'
 export default {
   data () {
     return {
       banners: [],
-      recommendSongs: []
+      recommendSongs: [],
+      personalRecommends: [],
+      latestMusic: []
     }
   },
   created () {
     this.getBanner()
     this.getRecommendSongs()
+    this.getPersonalRecommends()
+    this.getLatestMusic()
   },
   methods: {
     getBanner () {
@@ -74,18 +82,34 @@ export default {
         }
         this.recommendSongs = songs
       })
+    },
+    getPersonalRecommends () {
+      MusicService.getPersonalRecommends().then(res => {
+        let songs = res ? (res.result ? res.result : []) : []
+        this.personalRecommends = songs
+      })
+    },
+    getLatestMusic () {
+      MusicService.getLatestMusic(0, 6).then(res => {
+        if (res.code === 200) {
+          let songs = res ? (res.albums ? res.albums : []) : []
+          this.latestMusic = songs
+        }
+      })
     }
   },
   components: {
     Slider,
     Scroll,
-    ListThree
+    RecommendSongList,
+    DuJiaFangSong,
+    LatestMusic
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../../assets/style/var.scss';
+@import '../../../assets/style/var.scss';
 .slider {
   a {
     width: 100%;

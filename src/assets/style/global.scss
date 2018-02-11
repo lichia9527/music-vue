@@ -1,0 +1,25 @@
+@import './var.scss';
+.g-layout-3 {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  .item {
+    position: relative;
+    width: rem(245);
+    .image {
+      display: block;
+      width: 100%;
+    }
+    .name {
+      display: block;
+      width: 100%;
+      margin: rem(15) auto;
+      padding: 0 rem(15);
+      line-height: rem(30);
+      @include ellipsis(2);
+    }
+  }
+}
