@@ -1,7 +1,7 @@
 <template>
   <div class="header" :style="styles">
     <div class="left">
-      <div class="icon-left">
+      <div class="icon-left" @click="goBack">
         <i :class="'iconfont '+iconLeft"></i>
       </div>
       <h1>{{title}}</h1>
@@ -32,6 +32,11 @@ export default {
         return {}
       }
     }
+  },
+  methods: {
+    goBack () {
+      this.$router.back()
+    }
   }
 }
 </script>
@@ -43,13 +48,14 @@ export default {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 30;
   height: rem(110);
   background-color: transparent;
   display: flex;
   justify-content: space-between;
   background-color: $color-theme;
   padding: 0 rem(25);
-  color: #fff;
+  color: $color-text-theme;
   h1 {
     @include font(18);
   }

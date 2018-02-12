@@ -25,7 +25,7 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/var.scss';
 .container {
-  background: #fff;
+  background: $color-background;
   a {
     display: flex;
     justify-content: flex-start;

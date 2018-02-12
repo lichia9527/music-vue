@@ -48,7 +48,7 @@ export default {}
     align-items: center;
     .icon {
       padding: 0 rem(30);
-      color: $color-text-sub;
+      color: $color-text-theme-sub;
     }
     .router-link-active {
       .icon {

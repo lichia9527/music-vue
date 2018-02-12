@@ -1,6 +1,6 @@
 @import './var.scss';
 .g-layout-3 {
-  background: #fff;
+  background: $color-background;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,4 +22,13 @@
       @include ellipsis(2);
     }
   }
+}
+
+html,
+body {
+  background: $color-background;
+}
+
+a {
+  color: $color-text
 }

@@ -1,5 +1,5 @@
 import http from './config'
-export class MusicService {
+export default class MusicService {
   // 首页轮播
   static banner () {
     return http.get('banner')
@@ -9,6 +9,12 @@ export class MusicService {
   static getRecommendSongs () {
     return http.get('personalized')
   }
+
+  // 金品歌单（歌单）
+  static getSongList (cat, pageSize = 20) {
+    return http.get(`top/playlist/highquality?limit=${pageSize}&cat=${cat}`)
+  }
+
   // 独家放送
   static getPersonalRecommends () {
     return http.get('personalized/privatecontent')

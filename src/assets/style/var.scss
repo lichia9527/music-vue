@@ -1,9 +1,10 @@
 $color-theme: #d33a32;
 $color-theme-s: #c53b31;
-$color-background: #fff;
-$color-text: #222;
-$color-text-sub: #999;
+$color-background: #f9f9f9;
+$color-text: #000;
+$color-text-sub: #777;
 $color-text-theme: #fff;
+$color-text-theme-sub: #ccc;
 $color-border:#eaeaea;
 //字体定义规范
 $font-size-small-s: 10px;
@@ -33,4 +34,15 @@ $designWidth: 750;
 	display: -webkit-box;
 	-webkit-line-clamp: $line;
 	-webkit-box-orient: vertical;
+}
+
+@mixin layout() {
+	position: fixed;
+	top: rem(110);
+	left: 0;
+	right: 0;
+	bottom: rem(100);
+	z-index: 10;
+	background-color: $color-background;
+	overflow: auto;
 }

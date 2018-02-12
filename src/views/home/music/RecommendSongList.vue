@@ -1,6 +1,6 @@
 <template>
   <div v-if="this.items.length!==0">
-    <my-title m-title="推荐歌单" link="/home"></my-title>
+    <my-title m-title="推荐歌单" link="/home/music/songList"></my-title>
     <ul class="g-layout-3">
       <li class="item" v-for="(item,index) in items" :key="index">
         <img class="image" v-lazy="item.picUrl" alt="">
@@ -39,7 +39,7 @@ export default {
   position: absolute;
   top: rem(15);
   right: rem(15);
-  color: #fff;
+  color: $color-text-theme;
   @include font(10);
   .iconfont {
     @include font(10);

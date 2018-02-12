@@ -16,14 +16,12 @@
 </template>
 
 <script>
-export default {
-  name: 'home',
-  components: {}
-}
+export default {}
 </script>
 <style lang="scss" scoped>
 @import '../../assets/style/var.scss';
 .home {
+  @include layout();
   padding-top: rem(80);
 }
 
@@ -37,7 +35,7 @@ export default {
   @include font(14);
   justify-content: space-around;
   align-items: center;
-  background-color: #fff;
+  background-color: $color-background;
 
   .link {
     height: rem(80);
@@ -46,9 +44,9 @@ export default {
     display: inline-block;
     border-bottom: rem(5) solid transparent;
   }
- .link.router-link-active {
-   color: $color-theme;
-   border-bottom: rem(5) solid $color-theme
- }
+  .link.router-link-active {
+    color: $color-theme;
+    border-bottom: rem(5) solid $color-theme;
+  }
 }
 </style>

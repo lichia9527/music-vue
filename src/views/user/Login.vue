@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <m-header title="手机登录"></m-header>
+    <!-- <m-header title="手机登录"></m-header> -->
     <div class="form">
       <div class="input-group">
         <input type="text" v-model.trim="phone" placeholder="请输入手机号">
@@ -49,16 +49,16 @@ export default {
 @import '../../assets/style/var.scss';
 .login {
   position: fixed;
-  top: 0;
+  top: rem(110);
   left: 0;
   right: 0;
   bottom: 0;
   background: #fff;
-  z-index: 100;
+  z-index: 10;
   padding: 0 rem(25);
   @include font(14);
   .form {
-    margin-top: rem(140);
+    margin-top: rem(40);
     .input-group {
       height: rem(90);
       input {

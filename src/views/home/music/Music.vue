@@ -25,7 +25,7 @@
         </router-link>
       </li>
       <li class="tab-item">
-        <router-link to="fm" class="link">
+        <router-link to="/home/music/songList" class="link">
           <div class="container">
             <i class="iconfont icon-liebiao"></i>
           </div>
@@ -44,15 +44,15 @@
     <recommend-song-list :items="recommendSongs"></recommend-song-list>
     <du-jia-fang-song :data="personalRecommends"></du-jia-fang-song>
     <latest-music :data="latestMusic"></latest-music>
+    <router-view></router-view>
   </div>
 </template>
 <script>
 import Slider from '@/components/Slider'
-import Scroll from '@/components/Scroll'
 import RecommendSongList from './RecommendSongList'
 import DuJiaFangSong from './DuJiaFangSong'
 import LatestMusic from './LatestMusic'
-import { MusicService } from '@/api/music'
+import MusicService from '@/api/music'
 export default {
   data () {
     return {
@@ -100,7 +100,6 @@ export default {
   },
   components: {
     Slider,
-    Scroll,
     RecommendSongList,
     DuJiaFangSong,
     LatestMusic
@@ -121,7 +120,7 @@ export default {
   }
 }
 .tab {
-  background: #fff;
+  background: $color-background;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -150,7 +149,7 @@ export default {
       }
       .name {
         @include font(12);
-        color: #000;
+        color: $color-text;
         padding-top: rem(20);
       }
     }

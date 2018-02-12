@@ -30,7 +30,7 @@ export default {
       return this.data.filter(song => song.type === 24)
     },
     personalRecommendsOne () {
-      return this.data.filter(song => song.type === 19)
+      return this.data.filter(song => song.type !== 24)
     }
   },
   components: {
@@ -42,7 +42,7 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/style/var.scss';
 .dujia {
-  background: #fff;
+  background: $color-background;
   .pannel-two,
   .pannel-one {
     img {
