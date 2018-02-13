@@ -28,16 +28,18 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/style/var.scss';
 .g-layout-3 {
-  .item{
+  .item {
     .name {
       @include ellipsis(1);
+      height: rem(30);
     }
     .sub-name {
+      height: rem(20);
       @include ellipsis(1);
-      display: block;
       @include font(10);
-      padding: 0 rem(15) rem(20);
-      color: $color-text-sub
+      padding: 0 rem(15);
+      margin: 0 0 rem(20);
+      color: $color-text-sub;
     }
   }
 }

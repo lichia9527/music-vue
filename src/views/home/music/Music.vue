@@ -44,7 +44,11 @@
     <recommend-song-list :items="recommendSongs"></recommend-song-list>
     <du-jia-fang-song :data="personalRecommends"></du-jia-fang-song>
     <latest-music :data="latestMusic"></latest-music>
-    <router-view></router-view>
+    <transition name="slide">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 <script>

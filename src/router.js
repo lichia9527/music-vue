@@ -8,7 +8,6 @@ import Video from '@/views/home/video/Video'
 import Radio from '@/views/home/radio/Radio'
 import Login from '@/views/user/Login'
 import SongList from '@/views/home/music/SongList'
-import AppNav from '@/components/AppNav'
 Vue.use(Router)
 
 export default new Router({
@@ -18,52 +17,40 @@ export default new Router({
   },
   {
     path: '/home',
-    component: {
-      default: Home,
-      top: AppNav
+    component: Home,
+    children: [{
+      path: '',
+      redirect: 'music'
     },
-    children: [
-      {
-        path: '',
-        redirect: 'music'
-      },
-      {
-        path: 'music',
-        component: Music
-      },
-      {
-        path: 'video',
-        component: Video
-      },
-      {
-        path: 'radio',
-        component: Radio
-      }
+    {
+      path: 'music',
+      component: Music,
+      children: [{
+        path: 'songList',
+        component: SongList
+      } ]
+    },
+    {
+      path: 'video',
+      component: Video
+    },
+    {
+      path: 'radio',
+      component: Radio
+    }
     ]
   },
   {
     path: '/news',
-    name: 'news',
     component: News
   },
   {
     path: '/user',
-    name: 'user',
     component: User
   },
   {
-    path: 'songList',
-    component: {
-      default: SongList,
-      top: ''
-    }
-  },
-  {
     path: '/login',
-    component: {
-      default: Login,
-      top: ''
-    }
+    component: Login
   }
   ]
 })

@@ -1,25 +1,30 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <router-view name="top"></router-view>
+    <app-nav></app-nav>
+      <transition name="tab">
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
+      </transition>
   </div>
 </template>
 <script type="text/javascript">
-import './assets/style/index.scss'
-export default {}
+import AppNav from '@/components/AppNav'
+export default {
+  components: {
+    AppNav
+  }
+}
 </script>
-<style lang="scss">
-@import './assets/style/var.scss';
-#app {
-  overflow: auto;
-}
 
-.swiper-pagination-bullet {
-  width: rem(10);
-  height: rem(10);
-  background: $color-text-theme-sub;
-}
-.swiper-pagination-bullet-active {
-  background: $color-theme;
+<style lang="scss" scoped>
+@import './assets/style/var.scss';
+.main-content {
+  position: fixed;
+  top: rem(110);
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  z-index: 1;
 }
 </style>

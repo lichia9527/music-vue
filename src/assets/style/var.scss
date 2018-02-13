@@ -29,6 +29,7 @@ $designWidth: 750;
 }
 
 @mixin ellipsis($line) {
+	display: block;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
@@ -41,8 +42,39 @@ $designWidth: 750;
 	top: rem(110);
 	left: 0;
 	right: 0;
-	bottom: rem(100);
+	bottom: rem(0);
 	z-index: 10;
 	background-color: $color-background;
 	overflow: auto;
+}
+
+@mixin layer() {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: rem(0);
+	z-index: 20;
+	background-color: $color-background;
+	overflow: auto;
+}
+
+@mixin blur() {
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50%;
+	filter: blur(rem(20));
+	transform: scale(1.5);
+	&::after {
+		content: ' ';
+		background-color: rgba(0, 0, 0, 0.25);
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+	}
 }

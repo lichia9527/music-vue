@@ -1,14 +1,9 @@
 <template>
-  <div class="header" :style="styles">
-    <div class="left">
-      <div class="icon-left" @click="goBack">
-        <i :class="'iconfont '+iconLeft"></i>
-      </div>
-      <h1>{{title}}</h1>
+  <div class="header">
+    <div class="icon" @click="goBack">
+      <i :class="'iconfont '+iconLeft"></i>
     </div>
-    <div class="icon-right">
-      <i :class="'iconfont '+iconRight"></i>
-    </div>
+    <h1>{{title}}</h1>
   </div>
 </template>
 <script>
@@ -33,6 +28,7 @@ export default {
       }
     }
   },
+
   methods: {
     goBack () {
       this.$router.back()
@@ -44,28 +40,20 @@ export default {
 <style lang="scss" scoped>
 @import '../assets/style/var.scss';
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 30;
+  position: relative;
+  z-index: 10;
   height: rem(110);
   background-color: transparent;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   background-color: $color-theme;
   padding: 0 rem(25);
   color: $color-text-theme;
   h1 {
     @include font(18);
   }
-  .left {
-    display: flex;
-    align-items: center;
-  }
 
-  .icon-left,
-  .icon-right {
+  .icon {
     width: rem(50);
     height: 100%;
     line-height: rem(110);

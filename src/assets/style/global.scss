@@ -19,16 +19,51 @@
       margin: rem(15) auto;
       padding: 0 rem(15);
       line-height: rem(30);
+      height: rem(65);
       @include ellipsis(2);
     }
   }
 }
 
-html,
 body {
+  width: rem(750);
+  @include font(12);
   background: $color-background;
+  color: $color-text;
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback';
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a {
   color: $color-text
+}
+
+.tab-enter-active,
+.tab-leave-active {
+  transition: all 0.3s;
+}
+
+.tab-enter {
+  transform: translate3d(100%, 0, 0);
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s;
+}
+
+.slide-enter,.slide-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+
+
+.swiper-pagination-bullet {
+  width: rem(10);
+  height: rem(10);
+  background: $color-text-theme-sub;
+}
+
+.swiper-pagination-bullet-active {
+  background: $color-theme;
 }

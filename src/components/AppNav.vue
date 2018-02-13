@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="header">
     <div class="menu">
       <i class="icon iconfont icon-menu"></i>
     </div>
@@ -30,12 +30,8 @@ export default {}
 </script>
 <style lang="scss" scoped>
 @import '../assets/style/var.scss';
-.container {
-  position: fixed;
-  z-index: 30;
-  top: 0;
-  left: 0;
-  right: 0;
+.header {
+  position: relative;
   width: 100%;
   height: rem(110);
   padding: 0 rem(30);

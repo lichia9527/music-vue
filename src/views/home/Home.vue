@@ -11,7 +11,11 @@
         <router-link class="link" to="/home/Radio">电台</router-link>
       </li>
     </ul>
-    <router-view></router-view>
+    <transition name="tab">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 

@@ -11,7 +11,7 @@ export default class MusicService {
   }
 
   // 金品歌单（歌单）
-  static getSongList (cat, pageSize = 20) {
+  static getSongList (cat, pageSize = 21) {
     return http.get(`top/playlist/highquality?limit=${pageSize}&cat=${cat}`)
   }
 

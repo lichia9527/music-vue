@@ -1,4 +1,4 @@
-import '@/assets/js/hotcss.js'
+import '@/plugin/hotcss.js'
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -12,6 +12,8 @@ import layLoadIamge from '@/assets/image/default.png'
 
 // require styles
 import 'swiper/dist/css/swiper.css'
+
+import '@/assets/style/index.scss'
 
 Vue.use(VueAwesomeSwiper)
 Vue.use(VueLazyload, {
